@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Group xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="webSpider.model.ui.controllers.UIController">
+   <children>
+      <ImageView fitHeight="214.0" fitWidth="728.0" opacity="0.09">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" maxHeight="500.0" maxWidth="730.0" minHeight="500.0" minWidth="620.0" prefHeight="500.0" prefWidth="730.0">
+         <children>
+            <StackPane prefHeight="60.0" prefWidth="200.0" />
+            <Label text="Enter data:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="217.0" prefWidth="775.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="192.0" prefWidth="433.0" spacing="10.0">
+                     <children>
+                        <GridPane alignment="CENTER" prefHeight="155.0" prefWidth="378.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="166.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="267.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label contentDisplay="CENTER" text="URL:">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font></Label>
+                              <Label text="Text:" textAlignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font></Label>
+                              <Label text="Number of threads:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font></Label>
+                              <Label text="Max number of URLs:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Italic" size="14.0" />
+                                 </font></Label>
+                               <TextField fx:id="url" GridPane.columnIndex="1" />
+                              <TextField fx:id="text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="numberOfThreads" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="maxThreads" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                           </children>
+                        </GridPane>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="start" mnemonicParsing="false" onAction="#startAction" prefHeight="25.0" prefWidth="70.0" text="Start" textOverrun="CLIP">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="stop" mnemonicParsing="false" onAction="#stopAction" prefWidth="70.0" text="Stop">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="clear" mnemonicParsing="false" onAction="#clearAction" prefWidth="70.0" text="Clear">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label fx:id="errorMessage" textFill="#b50505" />
+            <TableView fx:id="urlTable" maxWidth="730.0" minWidth="730.0" prefHeight="294.0" prefWidth="730.0">
+              <columns>
+                <TableColumn fx:id="statusURL" prefWidth="362.0" text="URL" />
+                <TableColumn fx:id="status" minWidth="0.0" prefWidth="367.0" text="Status (processing, found, not found, error)" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</Group>
