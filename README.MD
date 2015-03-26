@@ -1,2 +1,2 @@
 Simple, multithread, web, gui-based spider.
-Implement searchin on web page.
+Implement searching on web pages.
